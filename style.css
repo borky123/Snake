@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+    background-color: beige;
+}
+#board {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    background-color: rgb(226, 223, 219);
+}
+.cells {
+    width: 18px;
+    height: 18px;
+    border: 1px solid lightblue;
+}
+.wall-cell {
+    background-color: rgb(134, 100, 12);
+}
+#startBtn {
+    margin-bottom: 30px;
+}
+.snake {
+    background-color: green;
+}
+.food {
+    background-color: rgb(247, 81, 4);
+    border-radius: 7px;
+}
+.score {
+    margin-top: 15px;
+    font-size: 25px;
+}
