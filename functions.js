@@ -5,6 +5,7 @@ var directionJ = 0;
 var headI = 12;
 var headJ = 12
 var speed = 1.5;
+var oneMove = false;
 
 function createBoard() {
     for (var i = 0; i < 25; ++i) {
@@ -30,18 +31,22 @@ window.onload = function() {
 }
 
 function setDirection(key) {
-    if (key.keyCode === 39 && directionJ != -1) {
+    if (key.keyCode === 39 && directionJ != -1 && oneMove == false) {
         directionI = 0;
         directionJ = 1;
-    } else if (key.keyCode === 38 && directionI != 1) {
+        oneMove = true;
+    } else if (key.keyCode === 38 && directionI != 1 && oneMove == false) {
         directionI = -1;
         directionJ = 0;
-    } else if (key.keyCode === 37 && directionJ != 1) {
+        oneMove = true;
+    } else if (key.keyCode === 37 && directionJ != 1 && oneMove == false) {
         directionI = 0;
         directionJ = -1;
-    }else if (key.keyCode === 40 && directionI != -1) {
+        oneMove = true;
+    }else if (key.keyCode === 40 && directionI != -1 && oneMove == false) {
         directionI = 1;
         directionJ = 0;
+        oneMove = true;
     }
 }
 
@@ -79,6 +84,7 @@ function moveSnake() {
         speed += 0.05;
         createFood();
     }
+    oneMove = false;
 }
 
 function createFood() {
